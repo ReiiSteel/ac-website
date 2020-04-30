@@ -1,20 +1,28 @@
 <template>
   <v-sheet class="full-img-sheet">
-    <v-img src="../assets/header_photo.jpg"></v-img>
+    <v-img :src="require('@/assets/'+image)">
+      <slot />
+    </v-img>
   </v-sheet>
 </template>
 
 <style lang="scss" scoped>
 .full-img-sheet {
-    padding-right: 50px;
-    padding-left: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 </style>
 
 <script lang="ts">
 import Vue from "vue";
+import Component from "vue-class-component";
 
-export default Vue.extend({
-  name: "FullImageSheet"
+const FullImageSheetProps = Vue.extend({
+  props: {
+    image: String
+  }
 });
+
+@Component
+export default class FullImageSheet extends FullImageSheetProps {}
 </script>

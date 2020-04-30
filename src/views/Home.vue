@@ -1,8 +1,8 @@
 <template>
   <div class="home d-flex flex-column">
-    <div>
-      <FullImageSheet class="header-image" image="header_photo.jpg" />
-    </div>
+    <FullImageSheet image="header_photo.jpg">
+      <v-img class="signature" src="@/assets/signature.png"/>
+    </FullImageSheet>
     <ContentRow
       class="content-row-a align-self-center"
       title="Explore the World"
@@ -16,6 +16,13 @@
 .content-row-a {
   margin-top: 128px;
   margin-bottom: 128px;
+}
+.signature {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 15vw;
+  filter: invert(100%);
 }
 </style>
 
