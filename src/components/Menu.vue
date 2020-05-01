@@ -29,7 +29,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-top: 48px;
+  padding-top: 80px;
   padding-bottom: 32px;
 
   .title-section {

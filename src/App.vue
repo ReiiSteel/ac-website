@@ -7,6 +7,13 @@
   </v-app>
 </template>
 
+<style lang="scss" scoped>
+#app {
+  padding-right: 56px;
+  padding-left: 56px;
+}
+</style>
+
 <script lang="ts">
 import Vue from "vue";
 import Menu from "@/components/Menu.vue";

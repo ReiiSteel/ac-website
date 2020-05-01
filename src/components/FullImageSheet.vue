@@ -8,8 +8,7 @@
 
 <style lang="scss" scoped>
 .full-img-sheet {
-  padding-right: 50px;
-  padding-left: 50px;
+  width: 100%;
 }
 </style>
 
