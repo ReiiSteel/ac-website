@@ -8,9 +8,12 @@
 </template>
 
 <style lang="scss" scoped>
-#app {
-  padding-right: 56px;
-  padding-left: 56px;
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  #app {
+    padding-right: 56px;
+    padding-left: 56px;
+  }
 }
 </style>
 
