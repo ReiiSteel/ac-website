@@ -3,7 +3,7 @@
     <v-sheet class="content-row-image">
       <v-img :src="require('@/assets/'+image)" />
     </v-sheet>
-    <div class="content-row-text d-flex flex-column">
+    <div class="content-row-text d-flex flex-column" :class="{ 'order-first': isTextFirst }">
       <h1 class="content-row-title title font-weight-bold">{{ title }}</h1>
       <p class="content-row-body body-2">{{ body }}</p>
     </div>
@@ -16,7 +16,7 @@
 }
 .content-row-text {
   width: 30vw;
-  padding: 24px;
+  padding: 32px;
 
   .content-row-title {
     letter-spacing: 2px !important;
@@ -35,9 +35,22 @@ import Component from "vue-class-component";
 
 const ContentRowProps = Vue.extend({
   props: {
-    title: String,
-    body: String,
-    image: String
+    title: {
+      type: String,
+      required: true
+    },
+    body: {
+      type: String,
+      required: true
+    },
+    image: {
+      type: String,
+      required: true
+    },
+    isTextFirst: {
+      type: Boolean,
+      default: false
+    }
   }
 });
 
