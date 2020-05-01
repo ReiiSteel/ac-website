@@ -1,21 +1,36 @@
 <template>
-  <div class="d-inline-flex align-center">
-    <v-sheet class="content-row-image">
+  <div class="d-inline-flex align-center" :class="{ 'alternate-version': alternateVersion }">
+    <v-sheet class="content-row-image" :class="{ 'alternate-version-image': alternateVersion }">
       <v-img :src="require('@/assets/'+image)" />
     </v-sheet>
-    <div class="content-row-text d-flex flex-column" :class="{ 'order-first': isTextFirst }">
-      <h1 class="content-row-title title font-weight-bold">{{ title }}</h1>
+    <div
+      class="content-row-text d-flex flex-column"
+      :class="{ 'order-first': textFirst, 'alternate-version-text': alternateVersion }"
+    >
+      <h1 class="content-row-title d-title font-weight-bold">{{ title }}</h1>
       <p class="content-row-body body-2">{{ body }}</p>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.alternate-version {
+  width: 100%;
+  background-color: #213a25;
+  .alternate-version-image {
+    width: 50% !important;
+  }
+  .alternate-version-text {
+    width: 50% !important;
+    color: white;
+  }
+}
+
 .content-row-image {
-  width: 35vw;
+  width: 35%;
 }
 .content-row-text {
-  width: 30vw;
+  width: 30%;
   padding: 32px;
 
   .content-row-title {
@@ -47,7 +62,11 @@ const ContentRowProps = Vue.extend({
       type: String,
       required: true
     },
-    isTextFirst: {
+    textFirst: {
+      type: Boolean,
+      default: false
+    },
+    alternateVersion: {
       type: Boolean,
       default: false
     }
